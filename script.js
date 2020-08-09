@@ -25,18 +25,23 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             timer = duration;
+            clear
+        }
+        if (timer < 0) {
+            clearInterval(timer);
+            alert("TIME IS UP")
         }
     }, 1000);
 }
 
 window.onload = function () {
-    var fiveMinutes = 60 * 5,
+    var twoMinutes = 60 * 2,
         display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
+    startTimer(twoMinutes, display);
 };
 
 function startGame() {
-    console.log('Started');
+    console.log('Started')
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -111,7 +116,7 @@ const questions = [
             answers: [
                 { text: 'Ravenclaw', correct: false },
                 { text: 'Slytherin', correct: false },
-                { text: 'Gryffindor', corrrect: true },
+                { text: 'Gryffindor', correct: true },
                 { text: 'Hufflepuff', correct: false }
             ]
         },
