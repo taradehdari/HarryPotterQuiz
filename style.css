@@ -84,3 +84,10 @@ body.wrong {
     display:none;
 }
 
+.timer {
+    position: absolute;
+    left: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: left;
+    display: flex;
+}
