@@ -86,8 +86,10 @@ body.wrong {
 
 .timer {
     position: absolute;
-    left: 30px;
+    right: 30px;
+    font-weight: bold;
+    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    justify-content: left;
+    justify-content: right;
     display: flex;
 }
