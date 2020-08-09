@@ -1,19 +1,20 @@
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById ('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const questionContainerElement = document.getElementById ('question-container');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
 
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex;
+let countRightAnswers = 0;
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
 
 function startGame() {
-    console.log('Started')
+    console.log('Started');
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -44,29 +45,32 @@ function resetState() {
     clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild
-        (answerButtonsElement.firstChild)
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
 }
 
 function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
+    document.getElementById('right-answers').innerHTML = countRightAnswers;
+    setStatusClass(document.body, correct);
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
-    })
+    });
     if(shuffledQuestions.length > currentQuestionIndex +1) {
         nextButton.classList.remove('hide')
     } else {
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
+    };
+    if (selectedButton.dataset = correct) {
+        countRightAnswers++;
     }
 }
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
-    if (corret) {
+    if (correct) {
         element.classList.add('correct')
     } else {
         element.classList.add('wrong')
@@ -78,213 +82,212 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
-const myQuestions = [
+const questions = [
         {
-            question: 'What house at Hogwarts does Harry Potter belong to?'
+            question: 'What house at Hogwarts does Harry Potter belong to?',
             answers: [
-                {text: 'Ravenclaw', correct: false},
-                {text: 'Slytherin', correct: false},
-                {text: 'Gryffindor', corrrect: true},
-                {text: 'Hufflepuff', correct: false}
+                { text: 'Ravenclaw', correct: false },
+                { text: 'Slytherin', correct: false },
+                { text: 'Gryffindor', corrrect: true },
+                { text: 'Hufflepuff', correct: false }
             ]
         },
         {
-            question: 'What house was Harry Potter originally supposed to belong to?' 
+            question: 'What house was Harry Potter originally supposed to belong to?', 
             answers: [
-                {text: 'Ravenclaw' correct: false}, 
-                {text: 'Slytherin' correct: true}, 
-                {text: 'Gryffindor' correct: false}, 
-                {text: 'Hufflepuff' correct: false} 
-            ],
-        },
-        {
-            question: 'What position did Harry Potter play on the quidditch team?'
-            answers: [
-                {text: 'Keeper' correct: false},
-                {text: 'Bludger' correct: false}, 
-                {text: 'Chaser' correct: false},
-                {text: 'Seeker' correct: true}
+                { text: 'Ravenclaw' correct: false }, 
+                { text: 'Slytherin' correct: true }, 
+                { text: 'Gryffindor' correct: false }, 
+                { text: 'Hufflepuff' correct: false } 
             ]
         },
         {
-            question: 'Who is Fluffy?'
+            question: 'What position did Harry Potter play on the quidditch team?',
             answers: [
-                {text: 'Hagrids dragon' correct: false},
-                {text: 'Hermoines cat' correct: false},
-                {text: 'A three-headed dog' correct: true},
-                {text: 'Harrys owl' correct: false}
-            ],
-            correctAnswer: "c"
+                { text: 'Keeper' correct: false },
+                { text: 'Bludger' correct: false }, 
+                { text: 'Chaser' correct: false },
+                { text: 'Seeker' correct: true }
+            ]
         },
         {
-            question: 'How does Harry Potter get his first snitch?'
+            question: 'Who is Fluffy?',
             answers: [
-                {text: 'with his broom' correct: false},
-                {text: 'in his mouth' correct: true},
-                {text: 'with his hand' correct: false},
-                {text: 'with his feet' correct: false}
-             ],
+                { text: 'Hagrids dragon' correct: false },
+                { text: 'Hermoines cat' correct: false },
+                { text: 'A three-headed dog' correct: true },
+                { text: 'Harrys owl' correct: false }
+            ]
         },
         {
-            question: 'What does the Marauders Map show?'
+            question: 'How does Harry Potter get his first snitch?',
             answers: [
-                {text: 'The location of everyone at Hogwarts' correct: true},
-                {text: 'The room of requirement' correct: false},
-                {text: 'The password to Dumbledores office' correct: false},
-                {text: 'Hidden treasure' correct: false}
-            ],
+                { text: 'with his broom' correct: false },
+                { text: 'in his mouth' correct: true },
+                { text: 'with his hand' correct: false },
+                { text: 'with his feet' correct: false }
+             ]
         },
         {
-            question: 'What is Harry Potters patronus?'
+            question: 'What does the Marauders Map show?',
             answers: [
-                {text: 'a stag' correct: true},
-                {text: 'a unicorn' correct: false},
-                {text: 'an owl' correct: false},
-                {text: 'a rabbit' correct: false}
-             ],
+                { text: 'The location of everyone at Hogwarts' correct: true },
+                { text: 'The room of requirement' correct: false },
+                { text: 'The password to Dumbledores office' correct: false },
+                { text: 'Hidden treasure' correct: false }
+            ]
         },
         {
-            question: 'How is Dobby freed from serving the Malfoys?'
+            question: 'What is Harry Potters patronus?',
             answers: [
-                {text: 'a spell' correct: false},
-                {text: 'a potion' correct: false},
-                {text: 'a pair of pants' correct: false},
-                {text: 'a sock' correct: true}
-            ],
+                { text: 'a stag' correct: true },
+                { text: 'a unicorn' correct: false },
+                { text: 'an owl' correct: false },
+                { text: 'a rabbit' correct: false }
+             ]
         },
         {
-            question: 'What makes a person feel better after seeing a Dementor?'
+            question: 'How is Dobby freed from serving the Malfoys?',
             answers: [
-                {text: 'Treacle pudding' correct: false},
-                {text: 'Chocolate' correct: true},
-                {text: 'Chicken Soup' correct: false},
-                {text: 'A nap' correct: false},
-            ],
-        {
-            question: 'Who is the Half-Blood Prince?'
-            answers: [
-                {text: 'Eileen Prince' correct: false},
-                {text: 'Lucius Malfoy' correct: false},
-                {text: 'Severus Snape' correct: true},
-                {text: 'Tom Riddle' correct: false}
-            ],
+                { text: 'a spell' correct: false },
+                { text: 'a potion' correct: false },
+                { text: 'a pair of pants' correct: false },
+                { text: 'a sock' correct: true }
+            ]
         },
         {
-            question: 'What does Dudmbledores will give to ron?'
+            question: 'What makes a person feel better after seeing a Dementor?',
             answers: [
-                {text: 'The Tales of Beedle the Bard' correct: false},
-                {text: 'A portrait' correct: false},
-                {text: 'A mirror fragment' correct: false},
-                {text: 'A deluminator' correct: true}
-            ],
+                { text: 'Treacle pudding' correct: false },
+                { text: 'Chocolate' correct: true },
+                { text: 'Chicken Soup' correct: false },
+                { text: 'A nap' correct: false },
+            ]
+        {
+            question: 'Who is the Half-Blood Prince?',
+            answers: [
+                { text: 'Eileen Prince' correct: false },
+                { text: 'Lucius Malfoy' correct: false },
+                { text: 'Severus Snape' correct: true },
+                { text: 'Tom Riddle' correct: false }
+            ]
         },
         {
-            question: 'Why does Snape protect Harry?'
+            question: 'What does Dudmbledores will give to ron?',
             answers: [
-                {text: 'He was in love with Lily' correct: true},
-                {text: 'He is Harrys father' correct: false},
-                {text: 'Dumbledore orders him to' correct: false},
-                {text: 'James was his best friend' correct: false}
-            ],
+                { text: 'The Tales of Beedle the Bard' correct: false },
+                { text: 'A portrait' correct: false },
+                { text: 'A mirror fragment' correct: false },
+                { text: 'A deluminator' correct: true }
+            ]
         },
         {
-            question: 'What does Felix Felices do?'
+            question: 'Why does Snape protect Harry?',
             answers: [
-                {text: 'Poisons you' correct: false},
-                {text: 'Gives good luck' correct: true},
-                {text: 'Makes you fall in love' correct: false},
-                {text: 'Brings someone back from the dead' correct: false}
-            ],
+                { text: 'He was in love with Lily' correct: true },
+                { text: 'He is Harrys father' correct: false },
+                { text: 'Dumbledore orders him to' correct: false },
+                { text: 'James was his best friend' correct: false }
+            ]
         },
         {
-            question: 'How did Hermoine take extra lessons her third year?'
+            question: 'What does Felix Felices do?',
             answers: [
-                {text: 'Weekend classes' correct: false},
-                {text: 'She made a clone' correct: false},
-                {text: 'The pensieve' correct: false},
-                {text: 'The time-turner' correct: true}
-            ],
+                { text: 'Poisons you' correct: false },
+                { text: 'Gives good luck' correct: true },
+                { text: 'Makes you fall in love' correct: false },
+                { text: 'Brings someone back from the dead' correct: false }
+            ]
         },
         {
-            question: 'What does the Mirror of Erised do?'
+            question: 'How did Hermoine take extra lessons her third year?',
             answers: [
-                {text: 'shows your hearts desires' correct: true},
-                {text: 'tells the future' correct: false},
-                {text: 'makes you appear beautiful to others' correct: false},
-                {text: 'gives you warts' correct: false}
-            ],
+                { text: 'Weekend classes' correct: false },
+                { text: 'She made a clone' correct: false },
+                { text: 'The pensieve' correct: false },
+                { text: 'The time-turner' correct: true }
+            ]
         },
         {
-            question: 'How are Hogwarts students placed in their houses?'
+            question: 'What does the Mirror of Erised do?',
             answers: [
-                {text: 'The sorting hat' correct: true},
-                {text: 'They are placed in the same house as their parents' correct: false},
-                {text: 'They are assigned by Professor Dumbledore' correct: false},
-                {text: 'They draw their names from a hat' correct: false}
-            ],
+                { text: 'shows your hearts desires' correct: true},
+                { text: 'tells the future' correct: false},
+                { text: 'makes you appear beautiful to others' correct: false },
+                { text: 'gives you warts' correct: false }
+            ]
         },
         {
-            question: 'What magical talent does Harry Potter share with Voldemort?'
+            question: 'How are Hogwarts students placed in their houses?',
             answers: [
-                {text: 'Hes a parselmouth' correct: true},
-                {text: 'He is an auror' correct: false},
-                {text: 'He uses the cruciatus curse' correct: false},
-                {text: 'He is an animagus' correct: false} 
-            ],
+                { text: 'The sorting hat' correct: true },
+                { text: 'They are placed in the same house as their parents' correct: false },
+                { text: 'They are assigned by Professor Dumbledore' correct: false },
+                { text: 'They draw their names from a hat' correct: false }
+            ]
         },
         {
-            question: 'What powers do the dementors have?'
+            question: 'What magical talent does Harry Potter share with Voldemort?',
             answers: [
-                {text: 'they make people do whatever they want' correct: false},
-                {text: 'they make people go crazy' correct: false},
-                {text: 'they drain people of all their happiness' correct: true},
-                {text: 'they cause people to harm one another' correct: false}
-            ],
+                { text: 'Hes a parselmouth' correct: true },
+                { text: 'He is an auror' correct: false },
+                { text: 'He uses the cruciatus curse' correct: false },
+                { text: 'He is an animagus' correct: false } 
+            ]
         },
         {
-            question: 'Who kills professor dumbledore?'
+            question: 'What powers do the dementors have?',
+            answers: [
+                { text: 'they make people do whatever they want' correct: false },
+                { text: 'they make people go crazy' correct: false },
+                { text: 'they drain people of all their happiness' correct: true },
+                { text: 'they cause people to harm one another' correct: false }
+            ]
+        },
+        {
+            question: 'Who kills professor dumbledore?',
             answers: [
                 {text: 'Bellatrix Lestrange' correct: false},
                 {text: 'Severus Snape' correct: true},
                 {text: 'Draco Malfoy' correct: false},
                 {text: 'Fenrir Greyback' correct: false}
-            ],
+            ]
         },
         {
-            question: 'How does Fawkes the Phoenix save Harry Potter?'
+            question: 'How does Fawkes the Phoenix save Harry Potter?',
             answers: [
-                {text: 'His spit' correct: false},
-                {text: 'He flies away to get help' correct: false},
-                {text: 'His tears' correct: true},
-                {text: 'He squawks until help arrives' correct: false}
-            ],
+                { text: 'His spit' correct: false },
+                { text: 'He flies away to get help' correct: false },
+                { text: 'His tears' correct: true },
+                { text: 'He squawks until help arrives' correct: false }
+            ]
         },
         {
-            question: 'Which is not a method of transportation for Wizards?'
+            question: 'Which is not a method of transportation for Wizards?',
             answers: [
-                {text: 'floo powder' correct: false},
-                {text: 'apparition' correct: false},
-                {text: 'aparecium' correct: true},
-                {text: 'a portkey' correct: false}
-            ],
+                { text: 'floo powder' correct: false },
+                { text: 'apparition' correct: false },
+                { text: 'aparecium' correct: true },
+                { text: 'a portkey' correct: false }
+            ]
         },
         {
-            question: 'What does Professor McGonagall teach?'
+            question: 'What does Professor McGonagall teach?',
             answers: [
-                {text: 'Transfiguration' correct: true},
-                {text: 'Herbology' correct: false},
-                {text: 'Potion' correct: false},
-                {text: 'History of Magic' correct: false}
-            ],
+                { text: 'Transfiguration' correct: true },
+                { text: 'Herbology' correct: false },
+                { text: 'Potion' correct: false },
+                { text: 'History of Magic' correct: false }
+            ]
         }, 
         {
-            question: 'Who had the same Patronous as Severus Snape?'
+            question: 'Who had the same Patronous as Severus Snape?',
             answers: [
-                {text: 'Harry Potter' correct: false},
-                {text: 'James Potter' correct: false},
-                {text: 'Professor Dumbeldor' correct: false},
-                {text: 'Lily Potter' correct: true}
-            ],
+                { text: 'Harry Potter' correct: false },
+                { text: 'James Potter' correct: false },
+                { text: 'Professor Dumbeldor' correct: false },
+                { text: 'Lily Potter' correct: true }
+            ]
         }, 
-    ];
+    ]
 
