@@ -3,6 +3,7 @@ const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById ('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
+
 let shuffledQuestions, currentQuestionIndex;
 let countRightAnswers = 0;
 startButton.addEventListener('click', startGame);
@@ -10,6 +11,8 @@ nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+
+
 function startGame() {
     console.log('Started');
     startButton.classList.add('hide')
@@ -18,10 +21,12 @@ function startGame() {
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 } 
+
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
+
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
@@ -35,6 +40,7 @@ function showQuestion(question) {
         answerButtonsElement.appendChild(button)
     })
 }
+
 function resetState() {
     clearStatusClass(document.body)
     nextButton.classList.add('hide')
@@ -42,6 +48,8 @@ function resetState() {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
 }
+
+
 function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
@@ -60,6 +68,7 @@ function selectAnswer(e) {
         countRightAnswers++;
     }
 }
+
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
@@ -68,10 +77,12 @@ function setStatusClass(element, correct) {
         element.classList.add('wrong')
     }
 }
+
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
+
 const questions = [
         {
             question: 'What house at Hogwarts does Harry Potter belong to?',
