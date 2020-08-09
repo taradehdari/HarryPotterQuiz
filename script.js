@@ -80,7 +80,7 @@ function clearStatusClass(element) {
 
 const myQuestions = [
         {
-            question: "What house at Hogwarts does Harry Potter belong to?"
+            question: 'What house at Hogwarts does Harry Potter belong to?'
             answers: [
                 {text: 'Ravenclaw', correct: false},
                 {text: 'Slytherin', correct: false},
@@ -89,7 +89,7 @@ const myQuestions = [
             ]
         },
         {
-            question: "What house was Harry Potter originally supposed to belong to?" 
+            question: 'What house was Harry Potter originally supposed to belong to?' 
             answers: [
                 {text: 'Ravenclaw' correct: false}, 
                 {text: 'Slytherin' correct: true}, 
@@ -98,7 +98,7 @@ const myQuestions = [
             ],
         },
         {
-            question: "What position did Harry Potter play on the quidditch team?"
+            question: 'What position did Harry Potter play on the quidditch team?'
             answers: [
                 {text: 'Keeper' correct: false},
                 {text: 'Bludger' correct: false}, 
@@ -107,17 +107,17 @@ const myQuestions = [
             ]
         },
         {
-            question: "Who is Fluffy?"
+            question: 'Who is Fluffy?'
             answers: [
-                {text: "Hagrid's dragon" correct: false},
-                {text: "Hermoine's cat" correct: false},
-                {text: "A three-headed dog" correct: true},
-                {text: "Harry's owl" correct: false}
+                {text: 'Hagrids dragon' correct: false},
+                {text: 'Hermoines cat' correct: false},
+                {text: 'A three-headed dog' correct: true},
+                {text: 'Harrys owl' correct: false}
             ],
             correctAnswer: "c"
         },
         {
-            question: "How does Harry Potter get his first snitch?"
+            question: 'How does Harry Potter get his first snitch?'
             answers: [
                 {text: 'with his broom' correct: false},
                 {text: 'in his mouth' correct: true},
@@ -126,16 +126,16 @@ const myQuestions = [
              ],
         },
         {
-            question: "What does the Marauder's Map show?"
+            question: 'What does the Marauders Map show?'
             answers: [
-                {text: "The location of everyone at Hogwarts" correct: true},
-                {text: "The room of requirement" correct: false},
-                {text: "The password to Dumbledore's office" correct: false},
-                {text: "Hidden treasure" correct: false}
+                {text: 'The location of everyone at Hogwarts' correct: true},
+                {text: 'The room of requirement' correct: false},
+                {text: 'The password to Dumbledores office' correct: false},
+                {text: 'Hidden treasure' correct: false}
             ],
         },
         {
-            question: "What is Harry Potter's patronus?"
+            question: 'What is Harry Potters patronus?'
             answers: [
                 {text: 'a stag' correct: true},
                 {text: 'a unicorn' correct: false},
@@ -144,7 +144,7 @@ const myQuestions = [
              ],
         },
         {
-            question: "How is Dobby freed from serving the Malfoy's?"
+            question: 'How is Dobby freed from serving the Malfoys?'
             answers: [
                 {text: 'a spell' correct: false},
                 {text: 'a potion' correct: false},
@@ -153,7 +153,7 @@ const myQuestions = [
             ],
         },
         {
-            question: "What makes a person feel better after seeing a Dementor?"
+            question: 'What makes a person feel better after seeing a Dementor?'
             answers: [
                 {text: 'Treacle pudding' correct: false},
                 {text: 'Chocolate' correct: true},
@@ -161,7 +161,7 @@ const myQuestions = [
                 {text: 'A nap' correct: false},
             ],
         {
-            question: "Who is the Half-Blood Prince?"
+            question: 'Who is the Half-Blood Prince?'
             answers: [
                 {text: 'Eileen Prince' correct: false},
                 {text: 'Lucius Malfoy' correct: false},
@@ -170,7 +170,7 @@ const myQuestions = [
             ],
         },
         {
-            question: "What does Dudmbledore's will give to ron?"
+            question: 'What does Dudmbledores will give to ron?'
             answers: [
                 {text: 'The Tales of Beedle the Bard' correct: false},
                 {text: 'A portrait' correct: false},
@@ -179,16 +179,16 @@ const myQuestions = [
             ],
         },
         {
-            question: "Why does Snape protect Harry?"
+            question: 'Why does Snape protect Harry?'
             answers: [
-                {text: "He was in love with Lily" correct: true},
-                {text: "He is Harry's father" correct: false},
-                {text: "Dumbledore orders him to" correct: false},
-                {text: "James was his best friend" correct: false}
+                {text: 'He was in love with Lily' correct: true},
+                {text: 'He is Harrys father' correct: false},
+                {text: 'Dumbledore orders him to' correct: false},
+                {text: 'James was his best friend' correct: false}
             ],
         },
         {
-            question: "What does Felix Felices do?"
+            question: 'What does Felix Felices do?'
             answers: [
                 {text: 'Poisons you' correct: false},
                 {text: 'Gives good luck' correct: true},
@@ -197,7 +197,7 @@ const myQuestions = [
             ],
         },
         {
-            question: "how did Hermoine take extra lessons her third year?"
+            question: 'How did Hermoine take extra lessons her third year?'
             answers: [
                 {text: 'Weekend classes' correct: false},
                 {text: 'She made a clone' correct: false},
@@ -206,16 +206,16 @@ const myQuestions = [
             ],
         },
         {
-            question: "What does the Mirror of Erised do?"
+            question: 'What does the Mirror of Erised do?'
             answers: [
-                {text: "shows your heart's desires" correct: true},
-                {text: "tells the future" correct: false},
-                {text: "makes you appear beautiful to others" correct: false},
-                {text: "gives you warts" correct: false}
+                {text: 'shows your hearts desires' correct: true},
+                {text: 'tells the future' correct: false},
+                {text: 'makes you appear beautiful to others' correct: false},
+                {text: 'gives you warts' correct: false}
             ],
         },
         {
-            question: "How are Hogwarts students placed in their houses?"
+            question: 'How are Hogwarts students placed in their houses?'
             answers: [
                 {text: 'The sorting hat' correct: true},
                 {text: 'They are placed in the same house as their parents' correct: false},
@@ -224,16 +224,16 @@ const myQuestions = [
             ],
         },
         {
-            question: "What magical talent does Harry Potter share with Voldemort?"
+            question: 'What magical talent does Harry Potter share with Voldemort?'
             answers: [
-                {text: "He's a parselmouth" correct: true},
-                {text: "He's an auror" correct: false},
-                {text: "He uses the cruciatus curse" correct: false},
-                {text: "He's an animagus" correct: false} 
+                {text: 'Hes a parselmouth' correct: true},
+                {text: 'He is an auror' correct: false},
+                {text: 'He uses the cruciatus curse' correct: false},
+                {text: 'He is an animagus' correct: false} 
             ],
         },
         {
-            question: "What powers do the dementors have?"
+            question: 'What powers do the dementors have?'
             answers: [
                 {text: 'they make people do whatever they want' correct: false},
                 {text: 'they make people go crazy' correct: false},
@@ -242,7 +242,7 @@ const myQuestions = [
             ],
         },
         {
-            question: "Who kills professor dumbledore?"
+            question: 'Who kills professor dumbledore?'
             answers: [
                 {text: 'Bellatrix Lestrange' correct: false},
                 {text: 'Severus Snape' correct: true},
@@ -251,7 +251,7 @@ const myQuestions = [
             ],
         },
         {
-            question: "How does Fawkes the Phoenix save Harry Potter?"
+            question: 'How does Fawkes the Phoenix save Harry Potter?'
             answers: [
                 {text: 'His spit' correct: false},
                 {text: 'He flies away to get help' correct: false},
@@ -260,7 +260,7 @@ const myQuestions = [
             ],
         },
         {
-            question: "Which is not a method of transportation for Wizards?"
+            question: 'Which is not a method of transportation for Wizards?'
             answers: [
                 {text: 'floo powder' correct: false},
                 {text: 'apparition' correct: false},
@@ -269,7 +269,7 @@ const myQuestions = [
             ],
         },
         {
-            question: "what does Professor McGonagall teach?"
+            question: 'What does Professor McGonagall teach?'
             answers: [
                 {text: 'Transfiguration' correct: true},
                 {text: 'Herbology' correct: false},
@@ -278,7 +278,7 @@ const myQuestions = [
             ],
         }, 
         {
-            question: "Who had the same Patronous as Severus Snape? "
+            question: 'Who had the same Patronous as Severus Snape?'
             answers: [
                 {text: 'Harry Potter' correct: false},
                 {text: 'James Potter' correct: false},
