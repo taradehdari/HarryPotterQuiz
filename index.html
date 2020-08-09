@@ -9,9 +9,10 @@
     <title>Harry Potter Quiz</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="hide" id="timer">Time Remaining: <span id="seconds">60</span></div>
+    <nav>
+       <div class=timer>Quiz closes in <span id="time">05:00</span> minutes!</div> 
     </nav>
+
     <div class="container">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
@@ -22,10 +23,12 @@
                 <button class="btn">ANSWER 4</button>
             </div>
         </div>
+
         <div class="controls">
             <button id="start-btn" class="start-btn btn">START</button> 
             <button id="next-btn" class="next-btn btn hide">NEXT</button>
         </div>
+
         <div id="results" class="card hide">
             <h2>Mischief Managed!</h2>
             <h3 id="user-score"></h3>
@@ -38,7 +41,9 @@
             />
             <button type="submit" class="btn" id="save-score">Save</button>
           </div>
+
         <span id="right-answers"></span>
+
     </div>
     
     
