@@ -25,13 +25,12 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             timer = duration;
-            clear
-        }
-        if (timer < 0) {
-            clearInterval(timer);
-            alert("TIME IS UP")
         }
     }, 1000);
+}
+
+function endTimer() {   
+    document.getElementById("time").innerHTML = "Time's up!";
 }
 
 window.onload = function () {
@@ -47,6 +46,7 @@ function startGame() {
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
+    countRightAnswers = 0;
 } 
 
 function setNextQuestion() {
@@ -94,6 +94,7 @@ function selectAnswer(e) {
     if (selectedButton.dataset = correct) {
         countRightAnswers++;
     }
+    document.getElementById('right-answers').innerHTML = countRightAnswers;
 }
 
 function setStatusClass(element, correct) {
