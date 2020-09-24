@@ -33,7 +33,7 @@ function endTimer() {
     document.getElementById("time").innerHTML = "Time's up!";
 }
 
-window.onload = function () {
+startButton.onclick = function () {
     var twoMinutes = 60 * 2,
         display = document.querySelector('#time');
     startTimer(twoMinutes, display);
@@ -203,7 +203,7 @@ const questions = [
             ]
         },
         {
-            question: 'What does Dudmbledores will give to ron?',
+            question: 'What does Dudmbledore`s will give to ron?',
             answers: [
                 { text: 'The Tales of Beedle the Bard', correct: false },
                 { text: 'A portrait', correct: false },
@@ -275,7 +275,7 @@ const questions = [
             ]
         },
         {
-            question: 'Who kills professor dumbledore?',
+            question: 'Who kills Professor Dumbledore?',
             answers: [
                 {text: 'Bellatrix Lestrange', correct: false},
                 {text: 'Severus Snape', correct: true},
