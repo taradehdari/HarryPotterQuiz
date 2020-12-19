@@ -7,8 +7,8 @@ For this project I learned to make a quiz. I chose to do a Harry Potter Quiz bec
 ## Demo
 
 - This is the Start Screen
-  ![Start Screen](/start.png)
+  ![Start Screen](/assets/start.png)
 - This is the screen when you chose a correct answer. Points go up and background turns green.
-  ![Correct Answer](/correct.png)
+  ![Correct Answer](/assets/correct.png)
 - This is the screen when you choose a wrong answer. Points stay the same and background turns red.
-  ![Wrong Answer](/incorrect.png)
+  ![Wrong Answer](/assets/incorrect.png)
