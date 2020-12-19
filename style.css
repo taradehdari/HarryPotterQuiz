@@ -21,7 +21,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: hsl(var(--hue), 100%, 20%);
-  background-image: url("https://data.whicdn.com/images/293384777/original.jpg");
 }
 
 body.correct {
